@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Global Education & Migration - Letterhead</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #e9eef3;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /*
+      The uploaded letterhead is used as the complete background.
+      Logo, contact details, website addresses, watermark and footer
+      are all kept exactly as they appear in the uploaded image.
+    */
+    .letterhead {
+        position: relative;
+        width: min(100vw, 750px);
+        aspect-ratio: 3 / 4;
+        margin: 25px auto;
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(0,0,0,.18);
+        overflow: hidden;
+    }
+
+    .letterhead-background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: fill;
+        z-index: 1;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    /*
+      Editable information goes only in the blank middle area.
+      It does not cover the logo/contact header or bottom footer.
+    */
+    .editable-area {
+        position: absolute;
+        z-index: 2;
+        left: 8%;
+        right: 8%;
+        top: 16%;
+        bottom: 14%;
+        padding: 2% 1%;
+        color: #222;
+        font-size: clamp(11px, 1.8vw, 15px);
+        line-height: 1.55;
+        overflow: hidden;
+    }
+
+    .date {
+        margin-bottom: 3%;
+        color: #173b61;
+    }
+
+    .date input,
+    .recipient input,
+    .subject input,
+    .signature input {
+        border: none;
+        border-bottom: 1px solid #aebdca;
+        background: transparent;
+        outline: none;
+        color: #173b61;
+        font: inherit;
+        padding: 3px;
+    }
+
+    .date input {
+        width: 170px;
+    }
+
+    .recipient {
+        margin-bottom: 2%;
+    }
+
+    .recipient input {
+        width: 100%;
+    }
+
+    .subject {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        margin: 3% 0;
+    }
+
+    .subject strong {
+        color: #1268b3;
+    }
+
+    .subject input {
+        flex: 1;
+        font-weight: bold;
+    }
+
+    .letter-text {
+        min-height: 45%;
+        outline: none;
+        color: #222;
+        white-space: pre-wrap;
+        padding: 4px;
+    }
+
+    .letter-text:empty::before {
+        content: "Type your letter or information here...";
+        color: #9aa9b6;
+    }
+
+    .signature {
+        margin-top: 3%;
+    }
+
+    .signature input {
+        display: block;
+        width: 260px;
+        margin: 5px 0;
+    }
+
+    .controls {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 0 auto 25px;
+        padding: 0 10px;
+    }
+
+    button {
+        border: 0;
+        border-radius: 5px;
+        padding: 11px 20px;
+        background: #1268b3;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #084d8c;
+    }
+
+    button.clear {
+        background: #173b61;
+    }
+
+    .note {
+        text-align: center;
+        color: #536b80;
+        font-size: 13px;
+        padding: 12px 10px 0;
+    }
+
+    @media print {
+        @page {
+            size: auto;
+            margin: 0;
+        }
+
+        html, body {
+            background: white;
+        }
+
+        .note,
+        .controls {
+            display: none;
+        }
+
+        .letterhead {
+            width: 100vw;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .date input,
+        .recipient input,
+        .subject input,
+        .signature input {
+            border-bottom: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="note">
+    Type your information in the blank area of the official AI Global letterhead.
+</div>
+
+<div class="letterhead">
+
+    <!-- YOUR UPLOADED LETTERHEAD — unchanged -->
+    <img
+        src="images/AI_Global_Education_Letterhead.png"
+        class="letterhead-background"
+        alt="AI Global Education & Migration official letterhead"
+    >
+
+    <div class="editable-area">
+
+        <div class="date">
+            <strong>Date:</strong>
+            <input type="date" id="date">
+        </div>
+
+        <div class="recipient">
+            <input type="text" id="recipient"
+                   placeholder="Recipient name / organisation">
+        </div>
+
+        <div class="recipient">
+            <input type="text" id="address"
+                   placeholder="Recipient address">
+        </div>
+
+        <div class="subject">
+            <strong>Subject:</strong>
+            <input type="text" id="subject"
+                   placeholder="Enter subject">
+        </div>
+
+        <div
+            id="letterText"
+            class="letter-text"
+            contenteditable="true"
+            spellcheck="true"
+        ></div>
+
+        <div class="signature">
+            <strong>Yours sincerely,</strong>
+
+            <input type="text" id="name"
+                   placeholder="Name">
+
+            <input type="text" id="position"
+                   placeholder="Position / Title">
+        </div>
+
+    </div>
+</div>
+
+<div class="controls">
+    <button onclick="window.print()">Print / Save as PDF</button>
+    <button onclick="sendEmail()">Send Information</button>
+    <button class="clear" onclick="clearForm()">Clear</button>
+</div>
+
+<script>
+    document.getElementById("date").value =
+        new Date().toISOString().split("T")[0];
+
+    function sendEmail() {
+        const subject =
+            document.getElementById("subject").value.trim() ||
+            "AI Global Education & Migration";
+
+        const recipient =
+            document.getElementById("recipient").value.trim();
+
+        const address =
+            document.getElementById("address").value.trim();
+
+        const message =
+            document.getElementById("letterText").innerText.trim();
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const position =
+            document.getElementById("position").value.trim();
+
+        const body =
+            "Date: " + document.getElementById("date").value + "\n\n" +
+            recipient + "\n" +
+            address + "\n\n" +
+            "Subject: " + subject + "\n\n" +
+            message + "\n\n" +
+            "Yours sincerely,\n" +
+            name + "\n" +
+            position;
+
+        window.location.href =
+            "mailto:?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+    }
+
+    function clearForm() {
+        if (!confirm("Clear all entered information?")) return;
+
+        document.getElementById("recipient").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("position").value = "";
+        document.getElementById("letterText").innerHTML = "";
+
+        document.getElementById("date").value =
+            new Date().toISOString().split("T")[0];
+    }
+</script>
+
+</body>
+</html>

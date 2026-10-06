@@ -1,5 +1,6 @@
 /* =========================================================
-   AI GLOBAL EDUCATION & MIGRATION
+   AI GLOBAL EDUCATION & MIGRATION - FIJI
+   Updated styling: same overall visual identity, expanded content
 ========================================================= */
 
 * {
@@ -19,6 +20,10 @@ body {
     line-height: 1.55;
 }
 
+a {
+    transition: 0.25s ease;
+}
+
 
 /* =========================================================
    HEADER / MAIN BANNER
@@ -32,22 +37,14 @@ body {
     background: #0876c9;
 }
 
-
-/* Full banner image */
-
 .header-banner {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     display: block;
-
-    /* Keeps the banner filling the full header */
     object-fit: fill;
 }
-
-
-/* Slight blue overlay so white text is easy to read */
 
 .site-header::after {
     content: "";
@@ -56,11 +53,6 @@ body {
     background: rgba(0, 80, 150, 0.10);
     pointer-events: none;
 }
-
-
-/* =========================================================
-   HEADER CONTENT
-========================================================= */
 
 .header-content {
     position: relative;
@@ -71,11 +63,6 @@ body {
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   HEADER LOGO
-========================================================= */
-
 .logo-container {
     position: absolute;
     top: 18px;
@@ -84,7 +71,7 @@ body {
     padding: 4px;
     background: #ffffff;
     border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.18);
     z-index: 10;
     text-decoration: none;
 }
@@ -104,29 +91,23 @@ nav {
     position: absolute;
     top: 20px;
     right: 15px;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 32px;
-
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 78%;
     z-index: 10;
 }
 
 nav a {
     position: relative;
-
     color: #ffffff;
     text-decoration: none;
-
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
-
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
-
+    text-shadow: 0 1px 4px rgba(0,0,0,0.55);
     padding: 5px 0;
-
-    transition: 0.25s ease;
 }
 
 nav a::after {
@@ -147,35 +128,26 @@ nav a:focus::after {
 
 
 /* =========================================================
-   HERO CONTENT INSIDE BANNER
+   HERO
 ========================================================= */
 
 .hero {
     position: absolute;
     z-index: 6;
-
-    top: 75px;
+    top: 78px;
     left: 0;
-
-    width: 54%;
-    min-height: auto;
-
-    padding: 5px 25px 0 25px;
-
+    width: 55%;
+    padding: 5px 25px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     color: #ffffff;
-
-    background: transparent;
 }
 
 .hero-content {
     width: 100%;
-    max-width: 620px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
@@ -185,43 +157,33 @@ nav a:focus::after {
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 1.2;
-
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.65);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.65);
 }
 
 .region {
     color: #ffffff;
     font-size: 15px;
     font-weight: 600;
-
     margin: 4px 0 10px;
-
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.65);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.65);
 }
 
 .hero h1 {
     color: #ffffff;
-
-    font-size: 34px;
+    font-size: 32px;
     line-height: 1.12;
-
     font-weight: 800;
-
     margin-bottom: 10px;
-
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.65);
 }
 
 .intro {
     color: #ffffff;
-
     font-size: 14px;
     line-height: 1.35;
-
-    max-width: 520px;
+    max-width: 540px;
     margin: 0 auto 13px;
-
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.65);
 }
 
 
@@ -233,27 +195,21 @@ nav a:focus::after {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
 .button {
     display: inline-block;
-
     padding: 9px 24px;
-
     background: #087bd1;
     color: #ffffff;
-
     border: 1px solid #087bd1;
     border-radius: 8px;
-
     text-decoration: none;
-
     font-size: 13px;
     font-weight: 700;
-
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
-
+    box-shadow: 0 3px 8px rgba(0,0,0,0.18);
     transition: 0.25s ease;
 }
 
@@ -264,7 +220,7 @@ nav a:focus::after {
 }
 
 .button.second {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.08);
     border: 1.5px solid #ffffff;
     color: #ffffff;
 }
@@ -280,7 +236,7 @@ nav a:focus::after {
 ========================================================= */
 
 .section {
-    padding: 45px 6%;
+    padding: 55px 6%;
 }
 
 .heading-small {
@@ -288,41 +244,44 @@ nav a:focus::after {
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 1.5px;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .section h2 {
     color: #07559a;
-    font-size: 28px;
+    font-size: 30px;
     line-height: 1.15;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+}
+
+.section-intro {
+    max-width: 800px;
+    margin: 0 auto 28px;
+    text-align: center;
+    color: #285d7f;
+    font-size: 13px;
 }
 
 
 /* =========================================================
-   ABOUT ME
+   ABOUT
 ========================================================= */
 
 .delegate-section {
     background: #ffffff;
-    padding: 12px 6% 35px;
+    padding: 28px 6% 45px;
 }
 
 .delegate-container {
     max-width: 1180px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
-    gap: 35px;
-
+    gap: 40px;
     background: #eef8ff;
-
-    border-radius: 9px;
-
-    padding: 18px 35px;
-
-    box-shadow: 0 2px 12px rgba(0, 91, 160, 0.07);
+    border-radius: 10px;
+    padding: 28px 40px;
+    box-shadow: 0 2px 14px rgba(0,91,160,0.08);
 }
 
 .delegate-photo {
@@ -335,24 +294,18 @@ nav a:focus::after {
 .photo-frame {
     width: 165px;
     height: 165px;
-
     border-radius: 50%;
     overflow: hidden;
-
     background: #ffffff;
-
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
 }
 
 .photo-frame img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
     object-position: center;
-
     border-radius: 50%;
 }
 
@@ -366,29 +319,18 @@ nav a:focus::after {
     margin: 0 0 4px;
 }
 
-.delegate-info h3 {
-    color: #0871c1;
-    font-size: 19px;
-    line-height: 1.1;
-    margin-bottom: 2px;
-}
-
 .delegate-info .position {
     color: #0871c1;
     font-size: 14px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .delegate-info p {
     color: #174b72;
     font-size: 13px;
-    line-height: 1.35;
-    margin-bottom: 7px;
-}
-
-.delegate-info .button {
-    margin-top: 2px;
+    line-height: 1.5;
+    margin-bottom: 9px;
 }
 
 
@@ -399,52 +341,43 @@ nav a:focus::after {
 .services {
     background: #ffffff;
     text-align: center;
-    padding: 20px 6% 45px;
-}
-
-.services h2 {
-    margin-bottom: 18px;
+    padding-top: 35px;
 }
 
 .services-container {
     max-width: 1180px;
     margin: 0 auto;
-
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
-    gap: 15px;
+    gap: 16px;
 }
 
 .service-card {
-    min-height: 145px;
-
+    min-height: 175px;
     background: #ffffff;
-
     border: 1px solid #d7edf9;
-
-    border-radius: 7px;
-
-    padding: 17px 14px;
-
+    border-radius: 9px;
+    padding: 18px 14px;
     text-align: center;
-
-    box-shadow: 0 2px 10px rgba(0, 105, 180, 0.10);
-
+    box-shadow: 0 2px 10px rgba(0,105,180,0.10);
     transition: 0.25s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 16px rgba(0, 105, 180, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(0,105,180,0.15);
+}
+
+.service-icon {
+    font-size: 28px;
+    margin-bottom: 4px;
 }
 
 .service-number {
     color: #0a77c9;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .service-card h3 {
@@ -457,86 +390,278 @@ nav a:focus::after {
 .service-card p {
     color: #17527d;
     font-size: 11.5px;
-    line-height: 1.35;
+    line-height: 1.4;
 }
 
 
 /* =========================================================
-   ORGANIZATION
+   COURSES
 ========================================================= */
 
-.organization {
+.courses-section {
     background: #e9f7ff;
-    padding: 24px 6%;
+    text-align: center;
 }
 
-.organization-container {
+.course-grid {
     max-width: 1180px;
     margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-
-    gap: 35px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 }
 
-.organization-text {
-    flex: 1;
-}
-
-.organization-text h2 {
-    color: #0866ad;
-    font-size: 19px;
-    margin: 0 0 2px;
-}
-
-.organization-text .heading-small {
-    margin-bottom: 2px;
-}
-
-.location {
-    color: #0871c1;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.organization-text p:not(.heading-small):not(.location) {
-    color: #185477;
-    font-size: 11.5px;
-    line-height: 1.35;
-    margin-bottom: 7px;
-}
-
-.organization-box {
-    flex: 0 0 260px;
-
-    background: transparent;
-
-    color: #075da5;
-
-    padding: 10px 20px;
-
+.course-category {
+    background: #ffffff;
+    border: 1px solid #cfe8f7;
+    border-radius: 9px;
+    padding: 22px 20px;
     text-align: left;
-
-    border-left: 1px solid #b9dff4;
-
-    box-shadow: none;
+    box-shadow: 0 2px 10px rgba(0,105,180,0.08);
 }
 
-.organization-box h3 {
+.course-category h3 {
+    color: #0869b4;
     font-size: 17px;
-    color: #0866ad;
+    margin-bottom: 12px;
 }
 
-.organization-box p {
-    font-size: 11px;
+.course-category ul {
+    padding-left: 18px;
 }
 
-.organization-box hr {
-    margin: 7px 0;
-    border: none;
-    border-top: 1px solid #b9dff4;
+.course-category li {
+    color: #285d7f;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.info-note {
+    max-width: 1180px;
+    margin: 22px auto 0;
+    background: #ffffff;
+    border-left: 4px solid #087bd1;
+    border-radius: 6px;
+    padding: 14px 18px;
+    color: #20597e;
+    font-size: 12px;
+    text-align: left;
+}
+
+
+/* =========================================================
+   VISA SECTION
+========================================================= */
+
+.visa-section {
+    background: #ffffff;
+    text-align: center;
+}
+
+.visa-grid {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.visa-card {
+    background: #f4faff;
+    border: 1px solid #dceff9;
+    border-top: 4px solid #087bd1;
+    border-radius: 8px;
+    padding: 20px 18px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,100,170,0.06);
+}
+
+.visa-card h3 {
+    color: #0869b4;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.visa-card p {
+    color: #285d7f;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why-section {
+    background: #e9f7ff;
+}
+
+.why-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.why-main h2 {
+    margin-bottom: 14px;
+}
+
+.why-main > p:not(.heading-small) {
+    color: #285d7f;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.stats-grid {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.stat-box {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 16px 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,100,170,0.06);
+}
+
+.stat-box strong {
+    display: block;
+    color: #0871c1;
+    font-size: 22px;
+}
+
+.stat-box span {
+    color: #285d7f;
+    font-size: 10.5px;
+}
+
+.why-features {
+    display: grid;
+    gap: 12px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,100,170,0.06);
+}
+
+.feature-item > span {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.feature-item h3 {
+    color: #0869b4;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.feature-item p {
+    color: #285d7f;
+    font-size: 11.5px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-section {
+    background: #ffffff;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-container details {
+    background: #f4faff;
+    border: 1px solid #dceff9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.faq-container summary {
+    cursor: pointer;
+    list-style: none;
+    color: #0869b4;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 15px 18px;
+}
+
+.faq-container summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-container summary::after {
+    content: "+";
+    float: right;
+    font-size: 18px;
+    color: #087bd1;
+}
+
+.faq-container details[open] summary::after {
+    content: "−";
+}
+
+.faq-container details p {
+    padding: 0 18px 16px;
+    color: #285d7f;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   OFFICIAL WEBSITE CTA
+========================================================= */
+
+.official-section {
+    background: linear-gradient(135deg, #063c6c, #087bd1);
+    padding: 38px 6%;
+}
+
+.official-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.official-container .heading-small,
+.official-container h2,
+.official-container p {
+    color: #ffffff;
+}
+
+.official-container h2 {
+    margin-bottom: 6px;
+}
+
+.official-container p {
+    font-size: 12px;
+    max-width: 700px;
 }
 
 
@@ -546,7 +671,7 @@ nav a:focus::after {
 
 .contact-section {
     background: #ffffff;
-    padding: 45px 6%;
+    padding: 55px 6%;
     text-align: center;
 }
 
@@ -560,30 +685,23 @@ nav a:focus::after {
     color: #285d7f;
     font-size: 13px;
     max-width: 650px;
-    margin: 0 auto 25px;
+    margin: 0 auto 28px;
 }
 
 .contact-container {
     max-width: 1180px;
     margin: 0 auto;
-
     display: grid;
-
     grid-template-columns: repeat(5, 1fr);
-
     gap: 12px;
 }
 
 .contact-box {
     background: #f4faff;
-
     border: 1px solid #dceff9;
-
     border-radius: 7px;
-
     padding: 18px 10px;
-
-    box-shadow: 0 2px 8px rgba(0, 100, 170, 0.06);
+    box-shadow: 0 2px 8px rgba(0,100,170,0.06);
 }
 
 .contact-icon {
@@ -623,24 +741,26 @@ nav a:focus::after {
 footer {
     background: #063c6c;
     color: #ffffff;
-
-    padding: 24px 6%;
-
+    padding: 28px 6%;
     text-align: center;
 }
 
 .footer-logo {
     width: 155px;
     height: auto;
-
     display: block;
-
     margin: 0 auto 10px;
 }
 
 footer p {
     color: #ffffff;
     font-size: 11px;
+    margin: 5px 0;
+}
+
+.footer-copy {
+    color: #b9c8d5;
+    margin-top: 10px;
 }
 
 
@@ -648,34 +768,45 @@ footer p {
    TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
+    nav {
+        gap: 12px;
+    }
 
+    nav a {
+        font-size: 11.5px;
+    }
+
+    .services-container,
+    .course-grid,
+    .visa-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .why-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
     .site-header {
         height: 330px;
     }
 
     .logo-container {
         width: 130px;
-        left: 12px;
-    }
-
-    nav {
-        gap: 16px;
-        right: 12px;
-    }
-
-    nav a {
-        font-size: 13px;
     }
 
     .hero {
-        width: 57%;
-        top: 75px;
-        padding: 5px 15px;
+        width: 58%;
     }
 
     .hero h1 {
-        font-size: 29px;
+        font-size: 28px;
     }
 
     .company-name {
@@ -686,12 +817,9 @@ footer p {
         font-size: 12px;
     }
 
-    .services-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .contact-container {
-        grid-template-columns: repeat(3, 1fr);
+    .delegate-container {
+        gap: 25px;
+        padding: 22px 25px;
     }
 }
 
@@ -701,7 +829,6 @@ footer p {
 ========================================================= */
 
 @media (max-width: 650px) {
-
     .site-header {
         height: 500px;
     }
@@ -720,25 +847,18 @@ footer p {
     nav {
         top: 13px;
         right: 10px;
-
         max-width: 62%;
-
-        display: flex;
-        flex-wrap: wrap;
-
-        gap: 5px 12px;
+        gap: 5px 10px;
     }
 
     nav a {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .hero {
         top: 105px;
         left: 0;
-
         width: 100%;
-
         padding: 15px 25px;
     }
 
@@ -746,20 +866,8 @@ footer p {
         max-width: 500px;
     }
 
-    .company-name {
-        font-size: 14px;
-    }
-
-    .region {
-        font-size: 13px;
-    }
-
     .hero h1 {
         font-size: 28px;
-    }
-
-    .intro {
-        font-size: 13px;
     }
 
     .delegate-container {
@@ -769,28 +877,18 @@ footer p {
         padding: 25px 18px;
     }
 
-    .delegate-photo {
-        flex-basis: auto;
-    }
-
-    .photo-frame {
-        width: 150px;
-        height: 150px;
-    }
-
-    .services-container {
+    .services-container,
+    .course-grid,
+    .visa-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .organization-container {
-        flex-direction: column;
-        text-align: center;
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .organization-box {
-        width: 100%;
-        border-left: none;
-        border-top: 1px solid #b9dff4;
+    .official-container {
+        flex-direction: column;
         text-align: center;
     }
 
@@ -805,7 +903,6 @@ footer p {
 ========================================================= */
 
 @media (max-width: 420px) {
-
     .site-header {
         height: 470px;
     }
@@ -820,7 +917,7 @@ footer p {
     }
 
     nav a {
-        font-size: 10px;
+        font-size: 9.5px;
     }
 
     .hero {
@@ -832,10 +929,7 @@ footer p {
         font-size: 24px;
     }
 
-    .company-name {
-        font-size: 12px;
-    }
-
+    .company-name,
     .region {
         font-size: 12px;
     }
@@ -850,41 +944,25 @@ footer p {
     }
 
     .services-container,
+    .course-grid,
+    .visa-grid,
     .contact-container {
         grid-template-columns: 1fr;
     }
 
-    .service-card {
-        max-width: 330px;
+    .service-card,
+    .course-category,
+    .visa-card {
+        max-width: 340px;
         margin: 0 auto;
         width: 100%;
     }
-/* =========================================================
-   FOOTER
-========================================================= */
 
-footer {
-    background: #092f52;
-    color: #ffffff;
-    text-align: center;
-    padding: 35px 10%;
-}
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-.footer-logo {
-    width: 180px;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px auto;
-}
-
-footer p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.footer-copy {
-    color: #b9c8d5;
-    margin-top: 15px;
-    font-size: 13px;
-}
+    .footer-logo {
+        width: 170px;
+    }
 }

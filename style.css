@@ -1,6 +1,5 @@
 /* =========================================================
    AI GLOBAL EDUCATION & MIGRATION - FIJI
-   Updated styling: same overall visual identity, expanded content
 ========================================================= */
 
 * {
@@ -339,61 +338,155 @@ nav a:focus::after {
 ========================================================= */
 
 .services {
-    background: #ffffff;
-    text-align: center;
-    padding-top: 35px;
+    padding: 100px 6%;
+    background: #f7f9fc;
+}
+
+.services .heading-small {
+    color: #c79a3b;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.services h2 {
+    font-size: clamp(38px, 5vw, 58px);
+    color: #102a43;
+    margin-bottom: 55px;
 }
 
 .services-container {
-    max-width: 1180px;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 .service-card {
-    min-height: 175px;
+    position: relative;
+    min-height: 250px;
+    padding: 30px;
     background: #ffffff;
-    border: 1px solid #d7edf9;
-    border-radius: 9px;
-    padding: 18px 14px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,105,180,0.10);
-    transition: 0.25s ease;
+    border: 1px solid #e8edf2;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 30px rgba(16, 42, 67, 0.04);
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #c79a3b;
+    border-radius: 50%;
+    top: -55px;
+    right: -55px;
+    opacity: 0.08;
+    transition: 0.4s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 7px 18px rgba(0,105,180,0.15);
+    transform: translateY(-8px);
+    border-color: #c79a3b;
+    box-shadow: 0 18px 45px rgba(16, 42, 67, 0.12);
 }
 
-.service-icon {
-    font-size: 28px;
-    margin-bottom: 4px;
+.service-card:hover::before {
+    transform: scale(2.5);
+}
+
+.service-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .service-number {
-    color: #0a77c9;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 800;
-    margin-bottom: 4px;
+    color: #9aa8b5;
+    letter-spacing: 1px;
+}
+
+.service-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f1e5;
+    color: #c79a3b;
+    border-radius: 14px;
+    font-size: 21px;
+    transition: all 0.35s ease;
+}
+
+.service-card:hover .service-icon {
+    background: #102a43;
+    color: #ffffff;
+    transform: rotate(-5deg) scale(1.08);
 }
 
 .service-card h3 {
-    color: #0869b4;
-    font-size: 16px;
-    line-height: 1.2;
-    margin-bottom: 7px;
+    position: relative;
+    font-size: 21px;
+    color: #102a43;
+    margin: 0 0 14px;
 }
 
 .service-card p {
-    color: #17527d;
-    font-size: 11.5px;
-    line-height: 1.4;
+    position: relative;
+    color: #6b7c8f;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 330px;
+}
+
+.service-arrow {
+    position: absolute;
+    right: 28px;
+    bottom: 25px;
+    color: #c79a3b;
+    font-size: 22px;
+    opacity: 0;
+    transform: translate(-8px, 8px);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 
+/* TABLET */
+@media (max-width: 1000px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .services {
+        padding: 70px 20px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .service-card {
+        min-height: 220px;
+        padding: 25px;
+    }
+}
 /* =========================================================
    COURSES
 ========================================================= */
@@ -877,7 +970,10 @@ footer p {
         padding: 25px 18px;
     }
 
-    .services-container,
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .course-grid,
     .visa-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -964,5 +1060,476 @@ footer p {
 
     .footer-logo {
         width: 170px;
+    }
+}
+
+
+/* =========================================================
+   IMAGE SAFETY
+========================================================= */
+
+img {
+    max-width: 100%;
+}
+
+/* =========================================================
+   FINAL POLISH / RESPONSIVE OVERRIDES
+========================================================= */
+
+/* Keep all major sections visually balanced */
+.section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+/* Header: avoid stretching the banner and keep text in a readable area */
+.site-header {
+    height: 390px;
+}
+
+.header-banner {
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero {
+    top: 104px;
+    width: 58%;
+    max-width: 780px;
+    padding: 12px 30px 0;
+}
+
+.hero-content {
+    max-width: 670px;
+}
+
+.hero h1 {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Delegate card: cleaner proportions and a stable portrait */
+.delegate-section {
+    padding: 54px 6%;
+}
+
+.delegate-container {
+    max-width: 1120px;
+    min-height: 285px;
+    padding: 34px 42px;
+    gap: 48px;
+}
+
+.delegate-photo {
+    flex: 0 0 205px;
+}
+
+.photo-frame {
+    width: 190px;
+    height: 190px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 70, 120, 0.16);
+}
+
+.delegate-info {
+    min-width: 0;
+}
+
+.delegate-info p {
+    max-width: 760px;
+}
+
+/* Services: consistent card heights and spacing */
+.services {
+    padding-top: 78px;
+    padding-bottom: 78px;
+}
+
+.services h2 {
+    font-size: clamp(34px, 4vw, 48px);
+    margin-bottom: 38px;
+}
+
+.services-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.service-card {
+    min-height: 245px;
+    padding: 27px;
+}
+
+.service-top {
+    margin-bottom: 25px;
+}
+
+/* Courses / Visas: use the same visual language as the service cards */
+.courses-section,
+.visa-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.courses-section h2,
+.visa-section h2,
+.faq-section h2 {
+    margin-bottom: 34px;
+}
+
+.course-grid,
+.visa-grid {
+    max-width: 1120px;
+    gap: 20px;
+}
+
+.course-category,
+.visa-card {
+    min-height: 190px;
+    border-radius: 14px;
+    padding: 24px;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.course-category:hover,
+.visa-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 90, 150, 0.10);
+    border-color: #a9d8f2;
+}
+
+.course-category h3 {
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.course-category li,
+.visa-card p {
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.info-note {
+    max-width: 1120px;
+    margin-top: 24px;
+    border-radius: 8px;
+}
+
+/* Why / FAQ / contact spacing */
+.why-section,
+.faq-section,
+.contact-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.why-container,
+.faq-container,
+.contact-container,
+.official-container {
+    max-width: 1120px;
+}
+
+.contact-container {
+    gap: 16px;
+}
+
+.contact-box {
+    min-height: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 12px;
+}
+
+.facebook-icon {
+    color: #0871c1;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+/* Better keyboard focus */
+a:focus-visible,
+summary:focus-visible {
+    outline: 3px solid rgba(8, 123, 209, .35);
+    outline-offset: 3px;
+}
+
+/* TABLET */
+@media (max-width: 1050px) {
+    .site-header {
+        height: 380px;
+    }
+
+    nav {
+        max-width: 72%;
+        gap: 10px 14px;
+    }
+
+    .hero {
+        width: 62%;
+        top: 100px;
+    }
+
+    .delegate-container {
+        gap: 30px;
+        padding: 30px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 800px) {
+    .site-header {
+        height: 420px;
+    }
+
+    .logo-container {
+        width: 125px;
+    }
+
+    nav {
+        top: 18px;
+        right: 12px;
+        max-width: 65%;
+        gap: 7px 11px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        top: 105px;
+        width: 100%;
+        padding: 15px 30px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .delegate-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 32px 25px;
+    }
+
+    .delegate-photo {
+        flex-basis: auto;
+    }
+
+    .delegate-info .button {
+        margin-top: 5px;
+    }
+
+    .why-container {
+        gap: 28px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+    .site-header {
+        height: 570px;
+    }
+
+    .header-banner {
+        object-position: center center;
+    }
+
+    .logo-container {
+        top: 12px;
+        left: 12px;
+        width: 105px;
+    }
+
+    nav {
+        top: 14px;
+        right: 10px;
+        max-width: calc(100% - 135px);
+        gap: 4px 9px;
+        justify-content: flex-end;
+    }
+
+    nav a {
+        font-size: 9.5px;
+        padding: 3px 0;
+    }
+
+    .hero {
+        top: 125px;
+        width: 100%;
+        padding: 18px 20px;
+    }
+
+    .company-name {
+        font-size: 13px;
+        letter-spacing: 1.4px;
+    }
+
+    .region {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+        line-height: 1.15;
+    }
+
+    .intro {
+        font-size: 12px;
+        line-height: 1.5;
+        max-width: 470px;
+    }
+
+    .hero-buttons {
+        gap: 9px;
+    }
+
+    .button {
+        padding: 9px 17px;
+        font-size: 11.5px;
+    }
+
+    .section,
+    .delegate-section,
+    .services,
+    .courses-section,
+    .visa-section,
+    .why-section,
+    .faq-section,
+    .contact-section {
+        padding: 52px 18px;
+    }
+
+    .delegate-container {
+        padding: 26px 18px;
+        border-radius: 14px;
+    }
+
+    .photo-frame {
+        width: 165px;
+        height: 165px;
+    }
+
+    .delegate-info h2 {
+        font-size: 25px;
+    }
+
+    .delegate-info p {
+        font-size: 13px;
+    }
+
+    .services h2,
+    .section h2,
+    .contact-section h2 {
+        font-size: 31px;
+    }
+
+    .services-container,
+    .course-grid,
+    .visa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card,
+    .course-category,
+    .visa-card {
+        min-height: 0;
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .service-card {
+        padding: 24px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    .course-category,
+    .visa-card {
+        padding: 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .official-section {
+        padding: 42px 18px;
+    }
+
+    .official-container {
+        gap: 18px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-box {
+        min-height: 120px;
+    }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 420px) {
+    .site-header {
+        height: 610px;
+    }
+
+    .logo-container {
+        width: 92px;
+    }
+
+    nav {
+        max-width: calc(100% - 115px);
+        gap: 3px 7px;
+    }
+
+    nav a {
+        font-size: 8.5px;
+    }
+
+    .hero {
+        top: 120px;
+        padding: 15px 16px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .intro {
+        font-size: 11px;
+    }
+
+    .hero-buttons .button {
+        padding: 8px 13px;
+        font-size: 10.5px;
+    }
+
+    .photo-frame {
+        width: 145px;
+        height: 145px;
+    }
+
+    .delegate-info h2,
+    .services h2,
+    .section h2,
+    .contact-section h2 {
+        font-size: 27px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }

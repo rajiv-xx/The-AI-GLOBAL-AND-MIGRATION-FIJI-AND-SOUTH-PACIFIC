@@ -1,0 +1,71 @@
+/* AI GLOBAL FIJI — SHARED BRAND AND PAGE STYLES
+   Matches style.css: Arial, blue/white identity, 350px banner, 145px logo.
+*/
+:root{--brand-blue:#0876c9;--brand-link:#087bd1;--brand-dark:#063c6c;--brand-text:#12385a;--brand-pale:#f4faff;--brand-pale-blue:#e9f7ff;--brand-border:#dbeaf5;--brand-white:#fff;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--brand-text);background:#fff;line-height:1.55}
+a{transition:color .25s ease,background-color .25s ease,transform .25s ease}
+
+/* Inner-page header uses the same banner dimensions, colour and logo sizing as home. */
+.page-header{position:relative;width:100%;height:350px;overflow:hidden;background:var(--brand-blue)}
+.page-header .header-banner{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:fill}
+.page-header::after{content:"";position:absolute;inset:0;background:rgba(0,80,150,.10);pointer-events:none}
+.page-header-inner{position:relative;z-index:5;width:94%;max-width:1450px;height:100%;margin:0 auto}
+.page-logo{position:absolute;top:18px;left:12px;width:145px;padding:4px;background:#fff;border-radius:5px;box-shadow:0 3px 10px rgba(0,0,0,.18);z-index:10;display:block;text-decoration:none}
+.page-logo img{display:block;width:100%;height:auto}
+.page-nav{position:absolute;top:20px;right:15px;display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:12px 20px;max-width:78%;z-index:10}
+.page-nav a{position:relative;color:#fff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,.55);padding:5px 0}
+.page-nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:#fff;transition:width .25s ease}
+.page-nav a:hover::after,.page-nav a.active::after{width:100%}
+.page-hero{position:absolute;z-index:6;top:92px;left:0;width:100%;padding:20px 25px;text-align:center;color:#fff}
+.page-hero .eyebrow{font-size:15px;font-weight:700;letter-spacing:2px;text-shadow:0 2px 5px rgba(0,0,0,.65);margin:0 0 6px}
+.page-hero h1{font-family:Arial,Helvetica,sans-serif;font-size:32px;line-height:1.12;font-weight:800;text-shadow:0 2px 6px rgba(0,0,0,.65);margin:0 0 10px;color:#fff}
+.page-hero p{max-width:760px;margin:0 auto;font-size:15px;line-height:1.55;text-shadow:0 1px 4px rgba(0,0,0,.65);color:#fff}
+
+/* Shared page content: same blue headings and soft blue/white sections as home. */
+.page-main{background:#fff}
+.page-section{padding:55px 6%;background:#fff}
+.page-section.alt{background:var(--brand-pale)}
+.page-section.blue{background:var(--brand-pale-blue)}
+.content-wrap{max-width:1180px;margin:0 auto}
+.eyebrow-dark{color:#0871c1;font-size:12px;font-weight:800;letter-spacing:1.5px;margin:0 0 7px}
+.page-section h2{font-family:Arial,Helvetica,sans-serif;font-size:30px;line-height:1.15;color:#07559a;margin:0 0 12px}
+.page-section h3{font-family:Arial,Helvetica,sans-serif;color:var(--brand-dark);font-size:20px;line-height:1.3;margin:0 0 7px}
+.page-section p{margin:0 0 13px}
+.lead{font-size:16px;max-width:900px;margin:0 0 25px!important}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:25px}
+.card{background:#fff;border:1px solid var(--brand-border);border-radius:12px;padding:23px;box-shadow:0 5px 18px rgba(6,60,108,.07);height:100%;transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(6,60,108,.12)}
+.card-icon{font-size:28px;color:var(--brand-link);margin-bottom:10px}
+.card ul{padding-left:20px;margin-top:10px}.card li{margin-bottom:6px}
+.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:25px}
+.detail-box{background:#fff;border:1px solid var(--brand-border);border-left:4px solid var(--brand-link);border-radius:10px;padding:23px;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+.detail-box ul{padding-left:20px;margin-top:10px}.detail-box li{margin-bottom:7px}
+.notice{margin-top:28px;padding:17px 20px;border-radius:9px;background:#fff7e8;border-left:4px solid #c79a3b}
+.notice a{color:#07559a;font-weight:700}
+.cta{padding:46px 6%;background:linear-gradient(135deg,#063c6c,#087bd1);color:#fff;text-align:center}
+.cta h2{font-family:Arial,Helvetica,sans-serif;font-size:30px;color:#fff;margin:0 0 9px}
+.cta p{max-width:760px;margin:0 auto 20px;color:#fff}
+.button{display:inline-block;padding:10px 23px;background:#087bd1;color:#fff;border:1px solid #087bd1;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;box-shadow:0 3px 8px rgba(0,0,0,.18)}
+.button:hover{background:#005da8;border-color:#005da8;transform:translateY(-1px)}
+.cta .button{background:#fff;color:#0871bc;border-color:#fff;margin:4px}.cta .button:hover{background:#eef8ff}
+.page-footer{background:#063c6c;color:#fff;text-align:center;padding:28px 6%}
+.page-footer img{display:inline-block;width:135px;max-width:100%;height:auto;background:#fff;padding:4px;border-radius:5px;margin:0 0 8px}
+.page-footer p{font-size:13px;line-height:1.5;margin:3px 0;color:#fff}.page-footer a{color:#fff}
+
+@media(max-width:900px){.page-header{height:370px}.page-nav{gap:10px 14px;max-width:72%}.page-hero{top:105px}.page-hero h1{font-size:30px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.page-header{height:420px}.page-logo{width:120px;left:10px;top:12px}.page-nav{top:70px;left:10px;right:10px;max-width:none;justify-content:center;gap:8px 14px}.page-nav a{font-size:12px}.page-hero{top:145px;padding:16px 18px}.page-hero h1{font-size:27px}.page-hero p{font-size:14px}.page-section{padding:42px 5%}.page-section h2{font-size:26px}.cards{grid-template-columns:1fr}.card{padding:19px}.detail-box{padding:19px}.cta h2{font-size:26px}}
+@media(max-width:420px){.page-header{height:450px}.page-nav{gap:6px 11px}.page-nav a{font-size:11px}.page-hero{top:160px}.page-hero h1{font-size:24px}.page-logo{width:110px}}
+
+
+/* Professional alignment: centre each page title block within the banner, below the navigation. */
+.page-header .page-hero{top:50%;left:0;width:100%;transform:translateY(-34%);padding:18px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.page-header .page-hero h1,.page-header .page-hero p{margin-left:auto;margin-right:auto;text-align:center;}
+.page-header .page-hero p{max-width:780px;}
+.page-nav{gap:10px 18px;}
+.page-nav a{white-space:nowrap;}
+#course-details,#visa-details{scroll-margin-top:22px;}
+@media(max-width:900px){.page-header .page-hero{top:56%;transform:translateY(-25%);}}
+@media(max-width:650px){.page-header .page-hero{top:61%;transform:translateY(-20%);padding:12px 16px;}}
+@media(max-width:420px){.page-header .page-hero{top:63%;transform:translateY(-15%);}}
